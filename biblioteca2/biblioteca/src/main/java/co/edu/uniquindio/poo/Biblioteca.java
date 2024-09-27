@@ -124,7 +124,7 @@ public class Biblioteca {
         }
     }
 
-    public void contarLibros(Libro libros) {
+    public int contarLibros(Libro libros) {
         int contador = 0;
         for (int i = 0; i >= 0; i++) {
             if (libros.getTitulo() == libros.getTitulo()) {
@@ -134,7 +134,7 @@ public class Biblioteca {
         return contador;
     }
 
-    public void sumaTotal(int contador) {
+    public double sumaTotal(int contador) {
         double acumulador = 0;
         for (int j = 0; j >= 0; j++) {
             if (contador > 0 && acumulador > 0) {
