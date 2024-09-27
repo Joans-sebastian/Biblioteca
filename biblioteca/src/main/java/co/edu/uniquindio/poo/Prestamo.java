@@ -2,26 +2,28 @@ package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
 import java.util.Collection;
-import java.util.LinkedList;
+
 /*
  * Clase para crear condiciones en el prestamo de un libro
  */
 public class Prestamo {
 
-    private String codigo;
-    private LocalDate fechaPrestamo, fechaEntrega;
-    private double total;
-    private Bibliotecario bibliotecario;
-    private Estudiante estudiante;
-    private Collection<DetallePrestamo> detallePrestamos;
+    public String codigo;
+    public LocalDate fechaPrestamo, fechaEntrega;
+    public double total;
+    public Bibliotecario bibliotecario;
+    public Estudiante estudiante;
+    public Collection<DetallePrestamo> detallePrestamos;
 
-    public Prestamo(String codigo, LocalDate fechaPrestamo, LocalDate fechaEntrega, Bibliotecario bibliotecario,
-            Estudiante estudiante) {
+    public Prestamo(String codigo, LocalDate fechaPrestamo, LocalDate fechaEntrega, double total,
+            Bibliotecario bibliotecario, Estudiante estudiante, Collection<DetallePrestamo> detallePrestamos) {
         this.codigo = codigo;
         this.fechaEntrega = fechaEntrega;
         this.fechaPrestamo = fechaPrestamo;
-        detallePrestamos = new LinkedList<>();
-        this.total = calcularTotal();
+        this.total = total;
+        this.bibliotecario = bibliotecario;
+        this.estudiante = estudiante;
+        detallePrestamos = new Collection<DetallePrestamo>();
     }
 
     public String getCodigo() {
@@ -86,13 +88,5 @@ public class Prestamo {
                 + ", total=" + total + ", bibliotecario=" + bibliotecario + ", estudiante=" + estudiante
                 + ", detallePrestamos=" + detallePrestamos + "]";
     }
-    
-    public double calcularTotal() {
-        double total = 0;
-        for (DetallePrestamo detallePrestamo : detallePrestamos) {
-            total += detallePrestamo.getSubTotal();
-        }
-        return total;
-    }
-    
+
 }

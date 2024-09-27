@@ -7,14 +7,15 @@ import java.time.LocalDate;
  */
 public class Libro {
 
-    private String titulo, editorial;
-    private int unidadesDisponibles, codigo, isbn;
-    private LocalDate fechaPublicacion;
-    private boolean estado;
+    public String titulo, editorial;
+    public int unidadesDisponibles, codigo, isbn;
+    public LocalDate fechaPublicacion;
+    public boolean estado;
     public Autor autor;
+    public double valorPrestamo;
 
     public Libro(String titulo, String editorial, int unidadesDisponibles, int codigo, int isbn,
-            LocalDate fechaPublicacion, boolean estado, Autor autor) {
+            LocalDate fechaPublicacion, boolean estado, Autor autor, double valorPrestamo) {
         this.titulo = titulo;
         this.editorial = editorial;
         this.unidadesDisponibles = unidadesDisponibles;
@@ -23,6 +24,7 @@ public class Libro {
         this.fechaPublicacion = fechaPublicacion;
         this.estado = estado;
         this.autor = autor;
+        this.valorPrestamo = valorPrestamo;
     }
 
     public String getTitulo() {
@@ -89,11 +91,19 @@ public class Libro {
         this.autor = autor;
     }
 
+    public double getValorPrestamo() {
+        return valorPrestamo;
+    }
+
+    public void setValorPrestamo(double valorPrestamo) {
+        this.valorPrestamo = valorPrestamo;
+    }
+
     @Override
     public String toString() {
         return "Libro [titulo=" + titulo + ", editorial=" + editorial + ", unidadesDisponibles=" + unidadesDisponibles
                 + ", codigo=" + codigo + ", isbn=" + isbn + ", fechaPublicacion=" + fechaPublicacion + ", estado="
-                + estado + ", autor=" + autor + "]";
+                + estado + ", autor=" + autor + ", valorPrestamo=" + valorPrestamo + "]";
     }
 
     public void add(Libro libro) {

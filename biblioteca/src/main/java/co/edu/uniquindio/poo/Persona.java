@@ -1,13 +1,12 @@
 package co.edu.uniquindio.poo;
+
 /*
  * Clase padre que hereda a las clases bibliotecario y estudiante
  */
 public class Persona {
 
-    private String nombre;
-    private String cedula;
-    private String correo;
-    private int telefono;
+    public String nombre, cedula, correo;
+    public int telefono;
 
     public Persona(String nombre, String cedula, String correo, int telefono) {
         this.nombre = nombre;
