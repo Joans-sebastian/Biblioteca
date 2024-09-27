@@ -225,7 +225,7 @@ public class Biblioteca {
     public boolean consultarLibroPorCodigo(int codigo) {
         boolean centinela = false;
         for (Libro libro : libros) {
-            if (libro.getCodigo().equals(codigo)) {
+            if (libro.getCodigo() == codigo) {
                 centinela = true;
             }
         }

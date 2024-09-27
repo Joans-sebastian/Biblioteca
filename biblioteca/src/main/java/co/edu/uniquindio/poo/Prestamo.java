@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Collection;
 
 /*
@@ -13,17 +14,17 @@ public class Prestamo {
     public double total;
     public Bibliotecario bibliotecario;
     public Estudiante estudiante;
-    public Collection<DetallePrestamo> detallePrestamos;
+    public ArrayList<DetallePrestamo> detallePrestamos;
 
     public Prestamo(String codigo, LocalDate fechaPrestamo, LocalDate fechaEntrega, double total,
-            Bibliotecario bibliotecario, Estudiante estudiante, Collection<DetallePrestamo> detallePrestamos) {
+            Bibliotecario bibliotecario, Estudiante estudiante, ArrayList<DetallePrestamo> detallePrestamos) {
         this.codigo = codigo;
         this.fechaEntrega = fechaEntrega;
         this.fechaPrestamo = fechaPrestamo;
         this.total = total;
         this.bibliotecario = bibliotecario;
         this.estudiante = estudiante;
-        detallePrestamos = new Collection<DetallePrestamo>();
+        detallePrestamos = new ArrayList<DetallePrestamo>();
     }
 
     public String getCodigo() {
@@ -78,7 +79,7 @@ public class Prestamo {
         return detallePrestamos;
     }
 
-    public void setDetallePrestamos(Collection<DetallePrestamo> detallePrestamos) {
+    public void setDetallePrestamos(ArrayList<DetallePrestamo> detallePrestamos) {
         this.detallePrestamos = detallePrestamos;
     }
 
