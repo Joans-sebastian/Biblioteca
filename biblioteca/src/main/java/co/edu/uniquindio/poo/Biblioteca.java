@@ -101,7 +101,7 @@ public class Biblioteca {
     }
 
     /*
-     * metodo para agregar un nuevo bibliotecario
+     * Metodo para agregar un nuevo bibliotecario
      */
     public void agregarBibliotecario(Bibliotecario bibliotecario) {
         if (!verificarBibliotecario(bibliotecario.getNombre())) {
@@ -195,20 +195,21 @@ public class Biblioteca {
     /*
      * metodo para contar los libros con el mismo nombre
      */
-    public int contarLibros(Libro libros) {
+    public int contarLibros(Libro libro) {
         int contador = 0;
         for (int i = 0; i >= 0; i++) {
-            if (libros.getTitulo() == libros.getTitulo()) {
+            if (libro.getTitulo() == libro.getTitulo()) {
                 contador++;
+
             }
         }
         return contador;
     }
 
     /*
-     * metodo para sumar el acumulado con el contador
+     * metodo para calcular el acumulado con el contador
      */
-    public double sumaTotal(int contador) {
+    public double sumaLibros(int contador) {
         double acumulador = 0;
         for (int j = 0; j >= 0; j++) {
             if (contador > 0 && acumulador > 0) {
@@ -232,6 +233,9 @@ public class Biblioteca {
         return centinela;
     }
 
+    /*
+     * metodo para calcular la suma de todos los prestamos
+     */
     public double calcularTotal() {
         double total = 0;
         for (DetallePrestamo detallePrestamo : detallePrestamos) {
